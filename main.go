@@ -2,12 +2,11 @@ package main
 
 import (
 	"log"
-	"spotify-api/internal/api"
-	"spotify-api/internal/handler"
+	"spotify-api/internal"
 )
 
 func main() {
-	app := handler.StartApplication()
-	api.TestRoutes(app)
+	app := internal.StartApplication()
+	internal.TestRoutes(app)
 	log.Fatal(app.Listen(":8080"))
 }
